@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shafarik&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- header-section -->
+    <header class="header-section">
+        <ul>
+            <li id="Youtube-logo">
+                <div>
+                    <div style="float: left;"><img src="./images/youtube.png" alt="image"
+                            style="width:40px; height:auto;"></div>
+                    <div style="float: left;">
+                        <span style="font-size: 30px; font-weight: bold;">YouTube</span>
+                    </div>
+                </div>
+            </li>
+            <li id="search">
+                <input type="search" name="search" id="searchInput" placeholder="Search">
+            </li>
+            <li id="notification">
+                <img src="./images/bell.png" alt="notification" style="width:30px; height:auto">
+            </li>
+            <li id="profile" onclick="showPopup()">
+                <img src="./images/user.png" alt="profile" style="width:30px; height:auto; cursor: pointer;">
+            </li>
+        </ul>
+    </header>
+    <!-- signUp section -->
+    <div class="outter-signup" id="overlay"></div>
+    <div class="inner-signup" id="popupBox">
+        <h2>Sign Up</h2>
+        <input type="email" name="" id="" placeholder="Enter your email">
+        <input type="text" name="" id="" placeholder="Enter your OTP">
+        <button onclick="closePopup()">close</button>
+        <button>get OTP</button>
+    </div>
+    <!-- aside-section -->
+    <div class="page-container">
+        <aside class="aside-section">
+            <ul>
+                <li onclick="home()"><img src="./images/home.png" alt="home">Home</li>
+                <li onclick="trending()"><img src="./images/fire.png" alt="Trending">Trending</li>
+                <li onclick="subscriptions()"><img src="./images/footage.png" alt="subscriptions">Subscriptions</li>
+                <li><img src="./images/library.png" alt="library">Library</li>
+                <li><img src="./images/clock.png" alt="history">History</li>
+
+            </ul>
+        </aside>
+
+        <div class="content-section">
+            <div id="not_found" style="display: none;">Sorry, Not Found..!</div>
+
+            <main class="video-gallery" id="video-gallery">
+                <!-- Row 1 -->
+                <div class="video-row">
+                    <div class="video-card" data-channel="Sun NXT Telugu">
+                        <a href="https://youtu.be/S1fLt9RRZj8?feature=shared">
+                            <img src="./images/thumbnails/thumbnail4.jpg" alt="Video 1">
+                            <h3>Iconic Pelli Choopulu Scene 🤣 | Vijay Deverakonda | Ritu Varma | Sun NXT Telugu</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP4.JPG" alt=""></li>
+                                <li><span class="channel-name">Sun NXT Telugu</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>10M views - 2 months ago</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-channel="Wunderbar Films">
+                        <a href="https://youtu.be/1seR_ckLXz4?feature=shared">
+                            <img src="./images/thumbnails/thumbnail5.jpg" alt="Video 2">
+                            <h3>Golden Sparrow - Video Song | Dhanush | Priyanka Mohan | Pavish | Anikha | GV Prakash
+                                #NEEK</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP5.JPG" alt=""></li>
+                                <li><span class="channel-name">Wunderbar Films</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>10M views - 2 month ago</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-channel="V R Facts In Telugu">
+                        <a href="https://youtu.be/PKRY1aHc3TQ?feature=shared">
+                            <img src="./images/thumbnails/thumbnail6.jpg" alt="Video 3">
+                            <h3>Indians Meeda Paga Pattina Trump | Trump on India Affairs & Economy, Modi | Latest Facts
+                                | VR Raja</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP6.JPG" alt=""></li>
+                                <li><span class="channel-name">V R Facts In Telugu</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>10M views - 2 month ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="video-row">
+                    <div class="video-card" data-channel="Gemini Comedy">
+                        <a href="https://youtu.be/p9GxjofnCv8?feature=shared">
+                            <img src="./images/thumbnails/thumbnail7.jpg" alt="Video 1">
+                            <h3>Back to Back Comedy Scenes | Robo | Rajinikanth | Aishwarya Rai | Telugu Comedy scene
+                            </h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP7.JPG" alt=""></li>
+                                <li><span class="channel-name">Gemini Comedy</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>1M Views - 2 weeks ago</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-channel="Telugu Comedy Club">
+                        <a href="https://youtu.be/-2QH70a-2nc?feature=shared">
+                            <img src="./images/thumbnails/thumbnail8.jpg" alt="Video 2">
+                            <h3>Pilla Zamindar Back 2 Back All Comedy Scenes - Telugu Comedy Scenes</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP8.JPG" alt=""></li>
+                                <li><span class="channel-name">Telugu Comedy Club</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>10M views - 2 months ago</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-channel="Aditya Cinemalu">
+                        <a href="https://youtu.be/Wkb1a7DLI9U?feature=shared">
+                            <img src="./images/thumbnails/thumbnail9.jpg" alt="Video 3">
+                            <h3>Life Is Beautiful Movie B2B Scenes | Vijay Devarakonda | Abhijeet | Shriya Saran | Amala
+                                Akkineni</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP9.JPG" alt=""></li>
+                                <li><span class="channel-name">Aditya Cinemalu</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>10M views - 4 years ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="video-row">
+                    <div class="video-card" data-channel="Think Music India">
+                        <a href="https://youtu.be/x3JxuRf1eUI?feature=shared">
+                            <img src="./images/thumbnails/thumbnail10.jpg" alt="Video 1">
+                            <h3>Raayani Kadhale (Telugu) - Video | True Lover | Manikandan, Sri Gouri Priya | Sean
+                                Roldan | Prabhuram</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP10.JPG" alt=""></li>
+                                <li><span class="channel-name">Think Music India</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>1M Views - 3 weeks ago</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-channel="FilmIsNow Epic Movie Zone">
+                        <a href="https://youtu.be/TJPFYs_88-g?feature=shared">
+                            <img src="./images/thumbnails/thumbnail11.jpg" alt="Video 2">
+                            <h3>How Every SPIDER-MAN Unlocked Their Powers! | Tobey Maguire, Andrew Garfield</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP11.JPG" alt=""></li>
+                                <li><span class="channel-name">FilmIsNow Epic Movie Zone</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>5M Views - 1 month ago</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-channel="SonyMusicSouthVEVO">
+                        <a href="https://youtu.be/QB122_vIAl8?feature=shared">
+                            <img src="./images/thumbnails/thumbnail12.jpg" alt="Video 3">
+                            <h3>AGR - Nuvu Simhame Video | Silambarasan TR | A. R Rahman</h3>
+                        </a>
+                        <div class="youtube-channel">
+                            <ul>
+                                <li><img src="./images/thumbnails/DP12.JPG" alt=""></li>
+                                <li><span class="channel-name">SonyMusicSouthVEVO</span></li>
+                            </ul>
+                            <input type="button" value="Subscribe" class="subscribe-button" onclick="subscribe(this)">
+                            <p>2M Views - 1 week ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional rows continue with the same pattern -->
+                <!-- Rows 4-8 would follow the exact same structure -->
+                <!-- ... -->
+
+            </main>
+        </div>
+    </div>
+    <!-- Trending Section -->
+    <div class="trending-section" id="trending-section">
+        <div class="trending-header">
+            <h2>Trending Videos</h2>
+        </div>
+
+        <main class="video-gallery" id="trending-videos">
+            <div class="video-row">
+                <!-- Video Card 1 -->
+                <div class="video-card" data-channel="YRF">
+                    <a href="https://youtu.be/cY3REsLgfz8?feature=shared">
+                        <img src="./images/thumbnails/thumbnail25.jpg" alt="WAR 2 Teaser">
+                        <div class="trending-badge">#1 Trending</div>
+                        <h3>WAR 2 Official Teaser | Telugu | Hrithik Roshan, NTR, Kiara Advani | YRF Spy Universe</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP25.JPG" alt="YRF Logo">
+                            <span>YRF</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="video-card" data-channel="Tips Telugu">
+                    <a href="https://youtu.be/RPXBxcisTrQ?feature=shared">
+                        <img src="./images/thumbnails/thumbnail26.jpg" alt="Asura Hananam">
+                        <div class="trending-badge">#2 Trending</div>
+                        <h3>Asura Hananam Lyrical | HariHaraVeeraMallu | PSPK | Bobby Deol | MM Keeravaani</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP26.JPG" alt="Tips Telugu Logo">
+                            <span>Tips Telugu</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="video-card" data-channel="Tree Music">
+                    <a href="https://youtu.be/AvdaW5BIZQM?feature=shared">
+                        <img src="./images/thumbnails/thumbnail27.jpg" alt="Daripontothundu">
+                        <div class="trending-badge">#3 Trending</div>
+                        <h3>Daripontothundu DJ Full Song | Madeen Sk | Naga Durga | Mamidi Mounika</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP27.JPG" alt="Tree Music Logo">
+                            <span>Tree Music</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-row">
+                <!-- Video Card 4 -->
+                <div class="video-card" data-channel="Hyderabad Diaries">
+                    <a href="https://youtu.be/tLFDnX61ocM?feature=shared">
+                        <img src="./images/thumbnails/thumbnail28.jpg" alt="SHAHRUKH AUR ZAINAB KI SHAADI">
+                        <div class="trending-badge">#4 Trending</div>
+                        <h3>SHAHRUKH AUR ZAINAB KI SHAADI | E02 | FAMILY COMEDY WEB SERIES</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP28.JPG" alt="Hyderabad Diaries Logo">
+                            <span>Hyderabad Diaries</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 5 -->
+                <div class="video-card" data-channel="T-Series Telugu">
+                    <a href="https://youtu.be/3qiqCTvhpOg?feature=shared">
+                        <img src="./images/thumbnails/thumbnail29.jpg" alt="Bhairavam Trailer">
+                        <div class="trending-badge">#5 Trending</div>
+                        <h3>Bhairavam Trailer | Bellamkonda Sreenivas, Manchu Manoj, Nara Rohith | Vijay Kanakamedala
+                        </h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP29.JPG" alt="T-Series Telugu Logo">
+                            <span>T-Series Telugu</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 6 -->
+                <div class="video-card" data-channel="Netflix India">
+                    <a href="https://youtu.be/d-dPJFzqU78?feature=shared">
+                        <img src="./images/thumbnails/thumbnail30.jpg" alt="Rana Naidu S2">
+                        <div class="trending-badge">#6 Trending</div>
+                        <h3>Rana Naidu: Season 2 | Official Teaser | Rana Daggubati, Venkatesh, Arjun Rampal</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP30.JPG" alt="Netflix India Logo">
+                            <span>Netflix India</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-row">
+                <!-- Video Card 7 -->
+                <div class="video-card" data-channel="T-Series Tamil">
+                    <a href="https://youtu.be/5CEXL8kfGL4?feature=shared">
+                        <img src="./images/thumbnails/thumbnail31.jpg" alt="KANIMAA - RETRO">
+                        <div class="trending-badge">#7 Trending</div>
+                        <h3>KANIMAA - RETRO | Suriya | Karthik Subbaraj | Pooja Hegde</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP31.JPG" alt="T-Series Tamil Logo">
+                            <span>T-Series Tamil</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 8 -->
+                <div class="video-card" data-channel="Mega Surya Production">
+                    <a href="https://youtu.be/uThZs_qjTbk?feature=shared">
+                        <img src="./images/thumbnails/thumbnail32.jpg" alt="Keeravaani Speech">
+                        <div class="trending-badge">#8 Trending</div>
+                        <h3>MM Keeravaani Speech at #HariHaraVeeraMallu Grand Press Meet</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP32.JPG" alt="Mega Surya Production Logo">
+                            <span>Mega Surya Production</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 9 -->
+                <div class="video-card" data-channel="Pravallika Damerla">
+                    <a href="https://youtu.be/J2Dlpl5lHBE?feature=shared">
+                        <img src="./images/thumbnails/thumbnail33.jpg" alt="Panchadara Bomma">
+                        <div class="trending-badge">#9 Trending</div>
+                        <h3>Panchadara Bomma Season 2 || Episode -1 || Pravallika Damerla || Charan Lakkaraju</h3>
+                    </a>
+                    <div class="video-meta">
+                        <div class="channel-info">
+                            <img src="./images/thumbnails/DP33.JPG" alt="Pravallika Damerla Logo">
+                            <span>Pravallika Damerla</span>
+                        </div>
+                        <p>6,254,249 views • May 20, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="historySection" style="display: none;">
+    <h2>Recently Watched</h2>
+    <ul id="historyList"></ul>
+</div>
+    <script src="./script.js" defer></script>
+</body>
+
+</html>
